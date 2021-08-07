@@ -54,7 +54,7 @@ export default {
     reserveSubject: async function () {
       const loader = this.$loading.show();
       try {
-        await axios.post(`subject/${this.subject.subjectId}/reserve`);
+        await axios.post(`${process.env.API_URL}/subject/${this.subject.subjectId}/reserve`);
       } catch (err) {
         console.error(err.message);
         this.$emit("subjectIsMax");
